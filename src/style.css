@@ -8,3 +8,7 @@ body {
   @apply bg-zinc-600;
   font-family: "Montserrat", sans-serif;
 }
+
+input:focus {
+  @apply outline-none;
+}

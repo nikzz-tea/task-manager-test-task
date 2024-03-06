@@ -7,5 +7,6 @@ import Header from "./components/Header.vue";
     class="mx-auto mt-8 min-h-screen max-w-[1400px] resize rounded-t-3xl bg-zinc-800 p-4"
   >
     <Header />
+    <router-view />
   </main>
 </template>

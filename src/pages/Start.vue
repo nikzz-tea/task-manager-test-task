@@ -1,0 +1,1 @@
+<template>Стартовая страница</template>

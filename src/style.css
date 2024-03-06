@@ -9,6 +9,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   @apply outline-none;
 }

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import Header from "./components/Header.vue";
+</script>
+
 <template>
-  <div>hello world</div>
+  <main
+    class="mx-auto mt-8 min-h-screen max-w-[1400px] resize rounded-t-3xl bg-zinc-800 p-4"
+  >
+    <Header />
+  </main>
 </template>

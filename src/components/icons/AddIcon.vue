@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="size-20 fill-zinc-600 duration-150 hover:fill-blue-400"
+    class="size-16 fill-zinc-600 duration-150 hover:fill-blue-400"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
   >

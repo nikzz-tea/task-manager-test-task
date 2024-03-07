@@ -17,6 +17,8 @@ const handleSubmit = () => {
     desc: desc.value,
     isCompleted: false,
   });
+  title.value = "";
+  desc.value = "";
 };
 </script>
 

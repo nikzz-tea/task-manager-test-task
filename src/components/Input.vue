@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <input
-    class="w-full rounded-md border-4 border-zinc-600 bg-transparent px-3 py-2 text-xl text-white"
+    class="w-full bg-transparent py-2 text-xl text-white"
     type="text"
     :placeholder="placeholder"
     :required="required"

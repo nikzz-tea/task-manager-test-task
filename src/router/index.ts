@@ -5,11 +5,11 @@ import Start from "../pages/Start.vue";
 const routes = [
   {
     path: "/",
-    component: Main,
+    component: Start,
   },
   {
-    path: "/start",
-    component: Start,
+    path: "/tasks",
+    component: Main,
   },
 ];
 

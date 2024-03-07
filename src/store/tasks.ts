@@ -31,4 +31,5 @@ export const useTasksStore = defineStore("tasks", {
       task.desc = desc;
     },
   },
+  persist: true,
 });

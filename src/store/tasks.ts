@@ -24,5 +24,11 @@ export const useTasksStore = defineStore("tasks", {
       if (!task) return;
       task.isCompleted = !task.isCompleted;
     },
+    editOne(id: number, title: string, desc: string) {
+      const task = this.tasks.find((task) => task.id === id);
+      if (!task) return;
+      task.title = title;
+      task.desc = desc;
+    },
   },
 });

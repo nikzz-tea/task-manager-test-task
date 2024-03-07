@@ -19,6 +19,7 @@ const newDesc = ref(desc || "");
 const isEditMode = ref(false);
 
 const handleSave = () => {
+  store.editOne(id, newTitle.value, newDesc.value);
   isEditMode.value = false;
 };
 </script>

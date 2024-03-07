@@ -1,11 +1,17 @@
 <script setup lang="ts">
 defineProps<{
+  modelValue: string;
   placeholder?: string;
 }>();
+const emit = defineEmits();
 </script>
 
 <template>
   <textarea
+    :value="modelValue"
+    @input="
+      emit('update:modelValue', ($event.target as HTMLInputElement).value)
+    "
     class="w-full bg-transparent py-2 text-xl text-white"
     type="text"
     :placeholder="placeholder"

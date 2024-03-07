@@ -16,5 +16,8 @@ export const useTasksStore = defineStore("tasks", {
     addOne(task: Task) {
       this.tasks.push(task);
     },
+    deleteOne(id: number) {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+    },
   },
 });

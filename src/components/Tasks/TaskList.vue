@@ -6,7 +6,7 @@ const store = useTasksStore();
 </script>
 
 <template>
-  <div class="flex flex-col gap-3">
+  <div v-auto-animate class="flex flex-col gap-3">
     <TaskCard v-for="task in store.tasks" :key="task.id" v-bind="task" />
   </div>
 </template>

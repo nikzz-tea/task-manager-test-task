@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import Task from "../../models/Task";
+import { useTasksStore } from "../../store/tasks";
 import BlankCheckIcon from "../icons/BlankCheckIcon.vue";
 import CheckIcon from "../icons/CheckIcon.vue";
 import DeleteIcon from "../icons/DeleteIcon.vue";
 import EditIcon from "../icons/EditIcon.vue";
 
-defineProps<Task>();
+const { id } = defineProps<Task>();
+
+const store = useTasksStore();
+
+const handleDelete = () => {
+  store.deleteOne(id);
+};
 </script>
 
 <template>
@@ -22,7 +29,7 @@ defineProps<Task>();
     </div>
     <div class="flex items-center gap-4">
       <EditIcon />
-      <DeleteIcon />
+      <DeleteIcon @click="handleDelete" />
     </div>
   </div>
 </template>

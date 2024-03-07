@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useTasksStore } from "../../store/tasks";
 import TaskCard from "./TaskCard.vue";
+
+const store = useTasksStore();
 </script>
 
 <template>
   <div class="flex flex-col gap-3">
-    <TaskCard title="adfgadg" />
-    <TaskCard title="hspofihf0os" />
+    <TaskCard v-for="task in store.tasks" :key="task.id" v-bind="task" />
   </div>
 </template>

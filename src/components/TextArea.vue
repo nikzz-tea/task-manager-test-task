@@ -2,6 +2,7 @@
 defineProps<{
   modelValue: string;
   placeholder?: string;
+  className?: string;
 }>();
 const emit = defineEmits();
 </script>
@@ -12,7 +13,7 @@ const emit = defineEmits();
     @input="
       emit('update:modelValue', ($event.target as HTMLInputElement).value)
     "
-    class="w-full bg-transparent py-2 text-xl text-white"
+    :class="['w-full bg-transparent py-2 text-xl text-white', className]"
     type="text"
     :placeholder="placeholder"
   />

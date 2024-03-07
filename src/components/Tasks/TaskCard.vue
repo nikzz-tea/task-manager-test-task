@@ -1,14 +1,26 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Task from "../../models/Task";
 import { useTasksStore } from "../../store/tasks";
 import BlankCheckIcon from "../icons/BlankCheckIcon.vue";
 import CheckIcon from "../icons/CheckIcon.vue";
 import DeleteIcon from "../icons/DeleteIcon.vue";
 import EditIcon from "../icons/EditIcon.vue";
+import SaveIcon from "../icons/SaveIcon.vue";
+import Input from "../Input.vue";
+import TextArea from "../TextArea.vue";
 
-const { id } = defineProps<Task>();
+const { id, title, desc } = defineProps<Task>();
 
 const store = useTasksStore();
+
+const newTitle = ref(title);
+const newDesc = ref(desc || "");
+const isEditMode = ref(false);
+
+const handleSave = () => {
+  isEditMode.value = false;
+};
 </script>
 
 <template>
@@ -26,12 +38,25 @@ const store = useTasksStore();
         <CheckIcon v-if="isCompleted" />
       </div>
       <div class="divide-y-2 divide-zinc-800">
-        <p class="pb-1 text-3xl">{{ title }}</p>
-        <p v-if="desc" class="pt-1 text-2xl">{{ desc }}</p>
+        <Input
+          placeholder="Название"
+          className="bg-zinc-700 rounded-t-md p-2"
+          v-if="isEditMode"
+          v-model="newTitle"
+        />
+        <p v-if="!isEditMode" class="pb-1 text-3xl">{{ title }}</p>
+        <TextArea
+          placeholder="Описание"
+          className="bg-zinc-700 rounded-b-md p-2"
+          v-if="isEditMode"
+          v-model="newDesc"
+        />
+        <p v-if="desc && !isEditMode" class="pt-1 text-2xl">{{ desc }}</p>
       </div>
     </div>
     <div class="flex items-center gap-4">
-      <EditIcon />
+      <EditIcon v-if="!isEditMode" @click="isEditMode = true" />
+      <SaveIcon v-if="isEditMode" @click="handleSave" />
       <DeleteIcon @click="store.deleteOne(id)" />
     </div>
   </div>

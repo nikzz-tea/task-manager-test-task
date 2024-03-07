@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="size-10 cursor-pointer fill-zinc-800 duration-150 hover:fill-blue-400"
+    class="size-10 cursor-pointer fill-blue-400 duration-150"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
   >

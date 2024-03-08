@@ -48,14 +48,17 @@ const handleSave = () => {
           v-if="isEditMode"
           v-model="newTitle"
         />
-        <p v-if="!isEditMode" class="pb-1 text-3xl">{{ title }}</p>
+        <p v-if="!isEditMode" class="pb-1 text-xl sm:text-3xl">{{ title }}</p>
         <TextArea
           placeholder="Описание"
           className="bg-zinc-700 rounded-b-md p-2"
           v-if="isEditMode"
           v-model="newDesc"
         />
-        <p v-if="desc && !isEditMode" class="break-all pt-1 text-2xl">
+        <p
+          v-if="desc && !isEditMode"
+          class="break-all pt-1 text-lg sm:text-2xl"
+        >
           {{ desc }}
         </p>
       </div>

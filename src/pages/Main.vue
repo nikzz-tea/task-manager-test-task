@@ -4,7 +4,7 @@ import TaskList from "../components/Tasks/TaskList.vue";
 </script>
 
 <template>
-  <div class="mx-auto flex max-w-[700px] flex-col gap-8 pt-8">
+  <div class="mx-auto flex max-w-[700px] flex-col gap-4 pt-8">
     <CreateForm />
     <TaskList />
     <router-link class="text-center" to="/">

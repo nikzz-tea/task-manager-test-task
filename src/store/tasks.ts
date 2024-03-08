@@ -14,7 +14,7 @@ export const useTasksStore = defineStore("tasks", {
   }),
   actions: {
     addOne(task: Task) {
-      this.tasks.push(task);
+      this.tasks = [task, ...this.tasks];
     },
     deleteOne(id: number) {
       this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -29,6 +29,11 @@ export const useTasksStore = defineStore("tasks", {
       if (!task) return;
       task.title = title;
       task.desc = desc;
+    },
+  },
+  getters: {
+    getActive({ tasks }) {
+      return tasks.filter((task) => !task.isCompleted);
     },
   },
   persist: true,
